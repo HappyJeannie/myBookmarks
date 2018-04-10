@@ -1,3 +1,5 @@
+document.getElementsByTagName('body')[0].style.height = window.innerHeight + 'px';
+
 var keys = {
   "0" : {"0":"q","1":"w","2":"e","3":"r","4":"t","5":"y","6":"u","7":"i","8":"o","9":"p","length":10},
   "1" : {"0":"a","1":"s","2":"d","3":"f","4":"g","5":"h","6":"j","7":"k","8":"l","length":9},
@@ -32,6 +34,10 @@ var hash = {
   "y":"www.youtube.com",
   "z":"https://www.zhihu.com/"
 }
+var hashLocalStorage = JSON.parse(localStorage.getItem('url') || null);
+if(hashLocalStorage){
+  hash = hashLocalStorage;
+}
 var index = 0;
 while(index < keys["length"]){
   var div = document.createElement('div');
@@ -46,8 +52,24 @@ while(index < keys["length"]){
     var btn2 = document.createElement('button');
     btn1.className = 'edit';
     btn2.className = 'del';
-    btn1.textContent = "编辑";
-    btn2.textContent = "删除";
+    btn1.textContent = "E";
+    btn2.textContent = "D";
+    btn1.id = 'edit'+row[index1];
+    btn2.id = 'del' + row[index1];
+    btn1.onclick = function(e){
+      var key = e['target']['id'].split('edit')[1];
+      var url = prompt('请输入新的网址：');
+      if(url){
+        hash[key] = url;
+        localStorage.setItem('url',JSON.stringify(hash));
+      }
+    }
+    btn2.onclick = function(e){
+      var key = e['target']['id'].split('del')[1];
+      if(confirm('确定要删除此网址？')){
+        hash[key] = '';
+      }
+    }
     kbd.appendChild(btn1);
     kbd.appendChild(btn2);
     index1++;
