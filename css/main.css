@@ -1,5 +1,13 @@
+body {
+  display: block;
+  width: 100%;
+  height: 100;
+  background: url('../img/bg.png') no-repeat center center;
+  background-size: cover;
+}
 main {
   text-align: center;
+  padding-top: 260px;
 }
 main .wrapper {
   display: inline-block;
@@ -7,16 +15,79 @@ main .wrapper {
 main .wrapper kbd {
   width: 4em;
   height: 4em;
-  border: 1px solid #e6e6e6;
   display: inline-block;
   text-transform: uppercase;
   position: relative;
+  border-radius: 4px;
+  box-shadow: 0 0 4px 4px #aaa inset;
+  margin-left: 10px;
+  margin-right: 10px;
+  margin-bottom: 20px;
+  text-align: center;
+  line-height: 4em;
+  font-size: 16px;
+  background: #eee;
 }
 main .wrapper kbd button {
   position: absolute;
-  bottom: 0px;
-  right: 0px;
+  top: 4px;
+  left: 4px;
+  color: #fff;
+  background: #f6a938;
+  display: block;
+  width: 1.2em;
+  height: 1.2em;
+  font-size: 12px;
+  text-align: center;
+  line-height: 1em;
+  border-radius: 2px;
+  border: none;
+  display: none;
+  outline: none;
 }
-main .wrapper kbd button.edit {
-  right: 2em;
+main .wrapper kbd button.del {
+  left: 1.6em;
+}
+main .wrapper kbd button:focus,
+main .wrapper kbd button:active,
+main .wrapper kbd button:hover,
+main .wrapper kbd button:visited {
+  border: none;
+}
+main .wrapper kbd:hover button {
+  display: block;
+}
+footer {
+  position: fixed;
+  left: 0px;
+  bottom: 0px;
+  display: block;
+  width: 100%;
+  height: 4em;
+  line-height: 4em;
+  text-align: center;
+  font-size: 14px;
+  background: rgba(200, 200, 200, 0.5);
+  color: #333;
+}
+footer a {
+  color: #222;
+  font-weight: 700;
+}
+header {
+  position: fixed;
+  left: 0px;
+  top: 0px;
+  display: block;
+  width: 100%;
+  height: 4em;
+  line-height: 4em;
+  text-align: center;
+  font-size: 14px;
+  background: rgba(200, 200, 200, 0.5);
+  color: #333;
+}
+header a {
+  color: #222;
+  font-weight: 700;
 }
