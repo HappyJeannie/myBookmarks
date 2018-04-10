@@ -1,0 +1,22 @@
+main {
+  text-align: center;
+}
+main .wrapper {
+  display: inline-block;
+}
+main .wrapper kbd {
+  width: 4em;
+  height: 4em;
+  border: 1px solid #e6e6e6;
+  display: inline-block;
+  text-transform: uppercase;
+  position: relative;
+}
+main .wrapper kbd button {
+  position: absolute;
+  bottom: 0px;
+  right: 0px;
+}
+main .wrapper kbd button.edit {
+  right: 2em;
+}
